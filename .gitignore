@@ -1,0 +1,14 @@
+*.exe
+*.pdf
+.vscode
+
+test.cpp
+INTRODUCTION TO C++
+DATA STRUCTURES IN C++/lecture 0 STL library
+DATA STRUCTURES IN C++/lecture 1 Pointers
+DATA STRUCTURES IN C++/lecture 2 Dynamic Allocation
+DATA STRUCTURES IN C++/lecture 3 Recursion 1
+DATA STRUCTURES IN C++/lecture 4 Recursion 1B
+DATA STRUCTURES IN C++/lecture 4 Recursion 2
+DATA STRUCTURES IN C++/lecture 6 OOPS 1
+DATA STRUCTURES IN C++/lecture 7 OOPS 2
