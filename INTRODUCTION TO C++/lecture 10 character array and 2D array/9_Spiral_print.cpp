@@ -59,47 +59,36 @@ using namespace std;
 
 void spiralPrint(int **input, int nRows, int nCols)
 {
-    int i,j;
-	int m=nRows;
-    int n=nCols;
-    
-    
-	int k = 0;
-    int l = 0;
-	while(k < m && l < n)
-	{
-		for(i = l; i < n; i++)
-		{
-			cout << input[k][i] << " ";
-		}
-		k++;
-        
-		for(i = k; i < m; i++)
-		{
-			cout << input[i][n-1] << " ";
-		}
-		n--;
-        
-		if(k < m)
-		{
-			for(i = n - 1; i >= l; --i)
-			{
-				cout << input[m-1][i] << " ";
-			}
-			m--;
-		}
-        
-		if(l < n)
-		{
-			for(i = m - 1; i >= k; i--)
-			{
-				cout << input[i][l] << " ";
-			}
-			l++;
-		}
-	}
-	cout << endl;
-
+    int flag_i=0;
+    int flag_j=0;
+    int flag_n=nRows;
+    int flag_m=nCols;
+    while( flag_i<flag_n && flag_j<flag_m ){
+        if(flag_i<flag_n){
+                for(int i=flag_j;i<flag_m;i++){
+                cout << input[flag_i][i] <<" ";
+            }
+            flag_i++;
+        }
+        if(flag_j<flag_m){
+                for(int i=flag_i;i<flag_n;i++){
+                cout << input[i][flag_m-1] <<" ";
+            }
+            flag_m--;
+        }
+        if(flag_i<flag_n){
+                for(int i=flag_m-1;i>=flag_j;--i){
+                cout << input[flag_n-1][i] <<" ";
+            }
+            flag_n--;
+        }
+        if(flag_j<flag_m){
+                for(int i=flag_n-1;i>=flag_i;--i){
+                cout << input[i][flag_j]<<" ";
+            }
+            flag_j++;
+        }
+    }
 }
 
 
