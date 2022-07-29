@@ -1,4 +1,4 @@
-# Coding-Ninja-C-# CODING NINJA C++ PRACTISE QUESTION
+# CODING NINJA C++ PRACTISE QUESTION
 
 # Descreption:-
 I have added all the question from INTRODCUTION TO C++ and currently working on DATA STRUCTURES IN C++.
