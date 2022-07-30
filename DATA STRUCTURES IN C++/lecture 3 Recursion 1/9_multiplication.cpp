@@ -30,15 +30,26 @@ using namespace std;
 int sum=0;
 int multiplyNumbers(int m, int n)
 {
+    // if(n==0)
+    // {
+    //     return sum;
+    // }
+    // else
+    // {
+    //     sum=sum+m;
+    //     multiplyNumbers( m, --n);
+    // }
+
     if(n==0)
     {
-        return sum;
+        return 0;
     }
     else
     {
-        sum=sum+m;
-        multiplyNumbers( m, --n);
+        int small_output=multiplyNumbers( m, --n);
+        return small_output+m;
     }
+
 }
 
 
