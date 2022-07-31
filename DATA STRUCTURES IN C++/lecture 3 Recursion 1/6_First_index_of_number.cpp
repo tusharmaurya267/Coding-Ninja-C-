@@ -29,18 +29,32 @@ using namespace std;
 int findex=-1;
 int firstIndex(int input[], int size, int x)
 {
-    if(size == 0)
-    {
-        return findex;
+    // if(size == 0)
+    // {
+    //     return findex;
+    // }
+    // else
+    // {
+    //     if(input[size-1] == x)
+    //     {
+    //         findex=size-1;
+    //     }
+    //     firstIndex(input, --size, x);
+    // }
+    
+    
+    if(size ==0){
+        return -1;
+    }
+    if(input[0]==x){
+        return 0;
+    }
+	int small_output=firstIndex(input+1,--size,x);
+    if(small_output!=-1){
+        return small_output+1;
     }
     else
-    {
-        if(input[size-1] == x)
-        {
-            findex=size-1;
-        }
-        firstIndex(input, --size, x);
-    }
+        return small_output;
 }
 
 int main(){

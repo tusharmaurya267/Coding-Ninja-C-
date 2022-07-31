@@ -29,18 +29,31 @@ using namespace std;
 
 int lastIndex(int input[], int size, int x) 
 {
-    if(size == 0)
-    {
+    // if(size == 0)
+    // {
+    //     return -1;
+    // }
+    // else
+    // {
+    //     if(input[size-1] == x)
+    //     {
+    //         return size-1;
+    //     }
+    //     lastIndex(input , --size, x); 
+    // }
+    
+    if(size==0){
         return -1;
     }
-    else
-    {
-        if(input[size-1] == x)
-        {
-            return size-1;
-        }
-        lastIndex(input , --size, x); 
+    int small_output=lastIndex(input+1,--size,x);
+    if(small_output!=-1){
+        return small_output+1;
+    }	
+    if(input[0]==x){
+        return 0;
     }
+    else if(small_output==-1)
+        return -1;
 }
 
 

@@ -25,32 +25,26 @@ Sample Output :
 using namespace std;
 
 
-int allIndexes(int input[], int size, int x, int output[]) {
-
-    if (size == 0) 
-    {
-        return 0;
+void find(int input[], int size, int x, int output[], int &k, int idx){
+    if(size==idx){
+        return ;
     }
- 
-    int smallAns = allIndexes(input + 1,size - 1, x, output);
-
-    if (input[0] == x) {
-        for (int i = smallAns - 1; i >= 0; i--) {
-            output[i + 1] = output[i] + 1;
-        }
- 
-        output[0] = 0;
-        smallAns++;
+    if(input[idx]==x){
+        output[k]=idx;
+        k++;
     }
-    else 
-    {
-        for (int i = smallAns - 1; i >= 0; i--) 
-        {
-            output[i] = output[i] + 1;
-        }
-    }
-    return smallAns;
+    find(input, size, x, output, k, idx+1);
+    
 }
+
+
+int allIndexes(int input[], int size, int x, int output[]) {
+    
+    int k=0;
+    find(input,size,x,output,k,0);
+    return k;
+}
+
 
 
 int main(){
