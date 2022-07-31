@@ -27,20 +27,17 @@ Sample Output 2 :
 #include <iomanip>
 using namespace std;
 
-double sum=0;
+
 double geometricSum(int k)
 {
-    if( k == 0)
-    {
-        sum = sum + 1;
-        return sum;
+    if(k==0){
+        return 1;
     }
-    else
-    {
-        sum = sum + (1 / pow(2,k) );
-        geometricSum( --k);
-    }
+    double small_output = 1/pow(2,k)+ geometricSum(--k);
+    return small_output;
 }
+
+
 
 
 int main() {

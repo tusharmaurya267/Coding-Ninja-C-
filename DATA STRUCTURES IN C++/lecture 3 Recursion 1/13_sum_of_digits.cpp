@@ -24,20 +24,15 @@ Sample Output 2 :
 using namespace std;
 
 
-int sum=0;
 int sumOfDigits(int n) 
 {
-    if(n == 0)
-    {
-        return sum;
+    if(n<=9){
+        return n;
     }
-    else
-    {
-        int d = n% 10;
-        sum = sum + d;
-        sumOfDigits( n/10 );
-    }
+    int small_output=sumOfDigits(n/10);
+    return small_output+n%10;
 }
+
 
 
 int main() {

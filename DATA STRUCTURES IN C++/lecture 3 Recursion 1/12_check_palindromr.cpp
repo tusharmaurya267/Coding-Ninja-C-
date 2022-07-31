@@ -28,20 +28,18 @@ using namespace std;
 
 #include<string.h>
 
+#include <string.h>
 bool helper(char input[] ,int start , int end)
 {
-    if(start < end)
-    {
-        if(input[start] != input[end])
-        {
-            return false;
-        }
-        helper( input , ++start , --end);
-    }
-    else
-    {
+    if(start>end){
         return true;
     }
+    if(input[start]!=input[end]){
+        return false;
+    }
+    bool small_output=helper(input,++start,--end);
+    return small_output;
+    
 }
 
 bool checkPalindrome(char input[])
@@ -49,6 +47,7 @@ bool checkPalindrome(char input[])
     int end = strlen(input);
 	helper(input , 0 , end-1);
 }
+
 
 
 int main() {
