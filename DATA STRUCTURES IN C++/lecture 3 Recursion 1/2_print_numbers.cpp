@@ -2,15 +2,27 @@
 using namespace std;
 
 void print(int n){
+    // if(n == 1)
+    // {
+    //     cout << n << " ";
+    // }
+    // else
+    // {
+    //     print(n - 1);
+    //     cout << n << " ";
+    // }
+
+
+
+    
     if(n == 1)
     {
-        cout << n << " ";
+        cout << "1" << " ";
+        return ;
     }
-    else
-    {
+    
         print(n - 1);
         cout << n << " ";
-    }
 }
 
 int main(){
