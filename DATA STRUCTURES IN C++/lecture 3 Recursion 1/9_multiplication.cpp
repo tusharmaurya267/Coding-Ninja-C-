@@ -40,7 +40,7 @@ int multiplyNumbers(int m, int n)
     //     multiplyNumbers( m, --n);
     // }
 
-    if(n==0)
+    if(n==0 || m==0)
     {
         return 0;
     }
