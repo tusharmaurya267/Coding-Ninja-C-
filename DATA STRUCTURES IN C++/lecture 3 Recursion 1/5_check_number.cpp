@@ -32,19 +32,28 @@ using namespace std;
 
 bool checkNumber(int input[], int size, int x)
 {
-    if(size==0)
-    {
-        return 0;
-    }
-    else
-    {
-        if(input[size]==x)
-        {
-            return 1;
-        }
+    // if(size==0)//     if(size==0)
+//     {
+//         return 0;
+//     }
+//     else
+//     {
+//         if(input[size]==x)
+//         {
+//             return 1;
+//         }
         
-        checkNumber(input,--size,x);
+//         checkNumber(input,--size,x);
+//     }
+    
+    if(size==0){
+        return false;
     }
+    else if(input[0]==x){
+        return true;
+    }
+    bool check=checkNumber(input+1,--size,x);
+    return check;
 }
 
 int main(){

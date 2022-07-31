@@ -32,15 +32,18 @@ using namespace std;
 int s=0;
 int sum(int input[], int n)
 {
-    if(n == -1)
-    {
-        return s;
+    // if ( n == 0)
+    // {
+    //     return 0;
+    // }
+    // int total = sum(input , --n);
+    // return total +input[n];
+    
+    if(n==0){
+        return 0;
     }
-    else
-    {
-        sum(input,n-1);
-        s=s+input[n-1];       
-    }
+    int small_output=sum(input+1 , --n);
+    return small_output+input[0];
 }
 
 int main(){

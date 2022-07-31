@@ -3,15 +3,24 @@ using namespace std;
 
 int c=1;
 int count(int n){
-    if(n >= 0 && n<=9 )
+    // if(n >= 0 && n<=9 )
+    // {
+    //     return c;
+    // }
+    // else
+    // {
+	// 	count(n / 10);
+    // 	c++;
+    // }
+
+
+
+    if(n <=9)
     {
-        return c;
+        return 1;
     }
-    else
-    {
-		count(n / 10);
-    	c++;
-    }
+    int smallAns = count(n / 10);
+    return smallAns + 1;
 }
 
 int main(){
