@@ -89,13 +89,13 @@ void helper(char input[] , int len)
     }
     else
     {
-        if( input[len] == 'i' && input[len-1] == 'p' )
-        {
-            shift_insert( input , len-1 ,change_len);
-            len--;
-        }
-        helper(input , --len);
-    }
+    //     if( input[len] == 'i' && input[len-1] == 'p' )
+    //     {
+    //         shift_insert( input , len-1 ,change_len);
+    //         len--;
+    //     }
+    //     helper(input , --len);
+    // }
 }
 
 void replacePi(char input[]) 
