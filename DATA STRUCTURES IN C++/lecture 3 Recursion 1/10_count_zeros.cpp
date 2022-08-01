@@ -49,6 +49,7 @@ int countZeros(int n)
     return count;
 }
 
+
 int main() {
     int n;
     cin >> n;
