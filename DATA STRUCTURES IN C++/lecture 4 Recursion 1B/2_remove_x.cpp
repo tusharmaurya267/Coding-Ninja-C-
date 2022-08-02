@@ -32,43 +32,67 @@ using namespace std;
 
 #include <bits/stdc++.h>
 
-void shift_remove(char input[] , int start , int end)
-{
-    if(start == end)
-    {
-        return ;
-    }
-    else
-    {
-        input[start] = input[start+1];
-        shift_remove( input , ++start , end );
-    }
-}
+// void shift_remove(char input[] , int start , int end)
+// {
+//     if(start == end)
+//     {
+//         return ;
+//     }
+//     else
+//     {
+//         input[start] = input[start+1];
+//         shift_remove( input , ++start , end );
+//     }
+// }
 
-void helper( char input[] , int start )
-{
-    int change_len = strlen(input);
+// void helper( char input[] , int start )
+// {
+//     int change_len = strlen(input);
     
-    if(input[start]  == '\0')
-    {
-        return ;
+//     if(input[start]  == '\0')
+//     {
+//         return ;
+//     }
+//     else
+//     {
+//         if( input[start] == 'x' )
+//         {
+//             shift_remove( input , start , change_len );
+//             --start;
+//         }
+//         helper(input , ++start);
+//     }
+// }
+
+// void removeX(char input[]) 
+// {
+//     int len=strlen(input);
+//     helper(input , 0 );
+// }
+
+
+
+
+void helper( char input[] , int start ,int start2 ,int end)
+{ 
+    if(start==end){
+        input[start2]='\0';
+        return;
     }
-    else
-    {
-        if( input[start] == 'x' )
-        {
-            shift_remove( input , start , change_len );
-            --start;
-        }
-        helper(input , ++start);
+    if(input[start]!='x'){
+        input[start2]=input[start];
+        start2++;
     }
+    helper(input,++start,start2,end);
 }
 
 void removeX(char input[]) 
 {
-    int len=strlen(input);
-    helper(input , 0 );
+    helper(input , 0 , 0, strlen(input));
 }
+
+
+
 
 int main() {
     char input[100];
