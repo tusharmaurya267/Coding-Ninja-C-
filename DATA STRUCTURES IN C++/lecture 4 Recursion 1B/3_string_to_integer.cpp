@@ -56,34 +56,25 @@ int main() {
 */
 
 
-
-int sum=0;
-int power=1;
-void helper(char input[] , int end )
-{
-    
-    if( end == 0 )
-    {
-        int no_convert = input[end];
-        sum = sum + (power * (no_convert - 48));
-        return;
+int helper(char input[] , int start , int end , int k)
+{    
+    if(end==0){
+        int convert = input[end]-'0';
+        return k*convert;
     }
-    else
-    {
-        int no_convert = input[end];
-        sum = sum + (power * (no_convert - 48));
-        power = power * 10;
-        helper (input , --end );
-    }
+    int convert = input[end]-'0';
+    int add=convert*k;
+    int small_output=add+helper(input,start,--end,k*10);
 }
 
 
 int stringToNumber(char input[]) 
 {
     int len=strlen(input);
-    helper(input , len-1 );
+    int k=pow(10,len);
+    int no = helper(input ,0 ,len-1 , 1);
+    return no;
 }
-
 
 int main() {
     char input[50];
