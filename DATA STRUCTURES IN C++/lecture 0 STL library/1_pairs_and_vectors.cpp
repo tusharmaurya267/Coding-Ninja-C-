@@ -24,8 +24,11 @@ void vector_function()
         cin >> x;
         v.push_back(x);                         //pushing value x in the last ,nth times
     }
+    cout << "Before pop:" << v.size() << endl;
     v.pop_back();                               //poping out the last value
+    cout << "After pop:" << v.size() << endl;;
     print_vector(v) ;
+
     
     cout << "initialization of vectors with some length and value : " << endl;
     vector <int> v1(5,3);                        //length of vector is 5 with initial value of "3".                    
