@@ -21,7 +21,6 @@ void reverse(stack<int>&s){
     s.pop();
     reverse(s);
     insert(s,temp);
-    
     return;
 }
 
