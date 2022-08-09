@@ -40,6 +40,26 @@ bool helper ( char *input )
    			return 0;
   		}
  	}
+
+
+    // if(input[0]=='a' && (input[1]==' '|| input[1]=='a')){
+    //     helper(input+1);
+    // }
+    // if(input[0]=='a' && (input[1]=='b' && input[2]=='b')){
+    //     helper(input+3);
+    // }
+    // if(input[0]=='b' && input[1]=='b' && (input[2]==' ' || input[2]=='a')){
+    //     helper(input+2);
+    // }
+    // if(input[0]=='b' && input[1]=='a'){
+    //     return false;
+    // }
+    // if(input[0]=='a' && input[1]=='b' && input[2]!='b'){
+    //     return false;
+    // }
+    // if(input ==nullptr){
+    //     return true;
+    // }    
 }
 
 bool checkAB(char input[])
