@@ -37,6 +37,7 @@ void keypad (int num , string output)
     {
         keypad ( num/10 , str[i] + output );
     }
+    return;
     
 }
 
@@ -44,6 +45,7 @@ void printKeypad(int num)
 { 
     string output ="";
     keypad ( num , output ); 
+    return;
 }
 
 int main(){
