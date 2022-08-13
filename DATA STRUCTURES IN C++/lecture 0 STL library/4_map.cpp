@@ -65,7 +65,7 @@ void map_question()
     map_print_ques(m);
     int n;
     cin >> n;
-    for ( int i = 0; i < m.size() ; i++ )
+    for ( int i = 0; i < n; i++ )
     {
     string str;
     cin >> str;
@@ -84,14 +84,14 @@ void map_question()
 
     //ALTERNATE 
 
-    /*
+    
     for ( int i = 0; i < n ; i++ )
     {
         string str;
         cin >> str;
         m[str]++;
     }
-    */
+    map_print_ques(m);
   
 }
 
