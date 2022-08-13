@@ -22,7 +22,7 @@ void set_function()
     {
         if ( it == s.find("bcd") )
         {
-            s.erase(it);
+            s.erase("bcd");
         }
     }
     print_set (s);
@@ -89,3 +89,7 @@ int main()
     cout << endl << "Print whether the strings are present in the set or not" << endl;
     unorder_set_question();
 }
+
+
+// .earse()->no return type   &  .find()->returns the address  &   .count()->returns the count  
+//  they don't require any loop

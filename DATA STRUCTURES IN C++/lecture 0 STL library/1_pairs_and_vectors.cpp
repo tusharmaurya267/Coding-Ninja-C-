@@ -73,6 +73,7 @@ void pair_function()
     swap ( p_array[0] , p_array[2] );
 
     int x,y;
+    cout << "Enter the pairs:   ";
     for ( int j=3 ; j < 6 ; j++)
     {
         cin >> x >> y;

@@ -65,7 +65,7 @@ void map_question()
     map_print_ques(m);
     int n;
     cin >> n;
-    for ( int i = 0; i < n ; i++ )
+    for ( int i = 0; i < m.size() ; i++ )
     {
     string str;
     cin >> str;
@@ -106,3 +106,7 @@ int main()
     cout << "Arrange lexicographically and print the frequency of each string" << "\n \n" ;
     map_question();
 }
+
+
+// .earse()->no return type   &  .find()->returns the address  &   .count()->returns the count  
+//  they don't require any loop

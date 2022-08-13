@@ -18,8 +18,12 @@ int main()
     m[5] ="def";
     m[3] ="acd";
     m[6] ="dch";
-    auto it = m.find(7);
+    m[4] ="abc";
+    auto it = m.find(4);
     if ( it != m.end() )
         m.erase (it);
         print (m);
 }
+
+// .earse()->no return type   &  .find()->returns the address  &   .count()->returns the count  
+//  they don't require any loop

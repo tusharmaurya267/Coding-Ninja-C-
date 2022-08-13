@@ -34,6 +34,6 @@ int main()
     }
     cout << endl;
     string s ="abcdefghi";
-    reverse (v.begin()+2,v.end());
+    reverse (s.begin(),s.end());
     cout << s << endl;
 }
