@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string NextPalindrome(char* num){
+char* NextPalindrome(char* num){
     int l=1;int d=0;
     
     for(int i=strlen(num)-1;i>=0;--i){
@@ -33,8 +33,15 @@ string NextPalindrome(char* num){
         j++;
         
     }
-    string str=to_string(j);
-    return str;
+    // CONVERT TO STRING:
+
+    // string str=to_string(j);
+    // return str;
+
+    // CONVERT TO CHAR ARRAY:
+
+    sprintf(num,"%d",j);
+    return num;
 }
 
 
@@ -42,7 +49,7 @@ string NextPalindrome(char* num){
 int main(){
     char num[5];
     cin >> num;
-    string p=NextPalindrome(num);
+    char *p=NextPalindrome(num);
     cout << p;
     return 0;
     
