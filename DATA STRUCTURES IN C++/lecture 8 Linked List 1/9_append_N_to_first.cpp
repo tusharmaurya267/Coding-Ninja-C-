@@ -12,6 +12,42 @@ public:
 	}
 };
 
+int len(Node*head)
+{
+    int count=0;
+    Node *temp=head;
+    while(temp!=NULL)
+    {
+        count++;
+        temp=temp->next;
+    }
+	return count;
+}
+
+Node *appendLastNToFirst(Node *head, int n)
+{
+    //Write your code here
+
+    if((n>len(head)) || (n==0)) return head;
+    Node *temp=head;
+    Node *fast=head;
+    while(n>0 && fast){
+        if(fast->next)
+        	fast=fast->next;
+        n--;
+    }
+    while(fast->next){
+        temp=temp->next;
+        fast=fast->next;
+    }
+    Node *t=temp->next;
+    temp->next=nullptr;
+    fast->next=head;
+    head=t;
+    
+	return head;
+}
+
 
 Node *takeinput()
 {
@@ -45,52 +81,6 @@ void print(Node *head)
 		temp = temp->next;
 	}
 	cout << endl;
-}
-
-
-int len(Node *head)
-{
-    int count=0;
-    Node *temp=head;
-    while(temp != NULL)
-    {
-        temp=(*temp).next;
-        count++;
-    }
-    
-    return count;
-}
-
-
-Node *appendLastNToFirst(Node *head, int n)
-{
-
-    if(n==0||head==NULL)
-    {
-        return head;
-    }
-    Node *initial_head=head;
-	int length = len(head);
-	int pos =length-n;
-	Node *temp = head;
-    Node *node_pos=head;
-    
-    for(int i=1 ; i < length ; i++)
-    {
-        if(i < pos)
-        {
-            node_pos = node_pos -> next;
-        }
-        temp = temp->next;                           
-    }
-
-    temp -> next = initial_head;	// making connection from head;
-    
-    head = node_pos -> next; 		// making the position as head
-    
-    node_pos -> next = NULL; 		// removing connection from position
-
-    return head;
 }
 
 

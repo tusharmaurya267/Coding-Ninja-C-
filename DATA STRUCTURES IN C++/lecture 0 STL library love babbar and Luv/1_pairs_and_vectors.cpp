@@ -53,8 +53,8 @@ void pair_function()
     cout << "PAIR :" << endl << endl;
 
     pair < int,string > p;
-    p = make_pair ( 2, "abc");
-    p = { 3, "def" };
+    p = make_pair ( 2, "abc");              // make pair
+    p = { 3, "def" };                       // make pair
     pair < int , string > p1 = p;           // copied the pairs with a new location
 
     pair < int , string > &p2 = p;          // passed the location of pair as reference

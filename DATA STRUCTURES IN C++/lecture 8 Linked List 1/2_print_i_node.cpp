@@ -60,6 +60,22 @@ public:
 };
 
 
+void printIthNode(Node *head, int i)
+{
+
+    Node *temp=head;
+    if(!temp) return;
+    while(i>0){
+        if(!temp->next){
+            return;
+        }
+        temp=temp->next;
+        i--;
+    }
+    cout<< temp->data;
+    
+}
+
 Node *takeinput()
 {
 	int data;
@@ -81,30 +97,6 @@ Node *takeinput()
 		cin >> data;
 	}
 	return head;
-}
-
-
-int count=0;
-void printIthNode(Node *head, int i)
-{
-    //Write your code here
-	if(head==NULL)
-    {
-        return;
-    }
-    else
-    {
-        if(i==count)
-        {
-            cout <<(*head).data;
-        }
-        else
-        {
-            count++;
-            printIthNode((*head).next,i);
-        }
-        
-    }
 }
 
 

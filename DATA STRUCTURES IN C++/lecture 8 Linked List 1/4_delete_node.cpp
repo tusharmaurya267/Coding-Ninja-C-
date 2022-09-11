@@ -69,6 +69,38 @@ public:
 	}
 };
 
+int length(Node *head)
+{
+    int count=0;
+	Node *temp=head;
+    while(temp!=NULL)
+    {
+        count++;
+        temp=temp->next;
+    }
+    return count;
+}
+
+
+Node *deleteNode(Node *head, int pos)
+{
+    // Write your code here.
+    if(pos>=length(head)){
+        return head;
+    }
+    Node* temp=head;
+    if(pos==0){
+        head=head->next;
+        return head;
+    }
+    while(temp && pos-1>0){
+        if(temp->next)
+            temp=temp->next;
+        pos--;
+    }
+    temp->next=temp->next->next;
+    return head;
+}
 
 Node *takeinput()
 {
@@ -104,50 +136,6 @@ void print(Node *head)
 	cout << endl;
 }
 
-
-int length(Node *head) 
-{
-   
-    int count=0;
-    while(head != NULL)
-    {
-        count++;
-        head=(*head).next;
-    }
-    return count;
-}
-
-Node* deleteNode(Node *head, int pos) 
-{
-   
-    Node *curr=head;
-    Node *pre=NULL;
-    int count=0;
-    
-    if( pos<0 || pos >= length(head))
-    {
-        
-    }
-    else if(pos==0)
-    {
-        head = (*curr).next;
-    }
-    else
-    {
-        while(count < pos && curr != NULL)
-        {
-            pre=curr;
-            curr=(*curr).next;
-            count++;
-        }
-        
-        (*pre).next=(*curr).next;
-        
-    }
-    
-    return head;
-    
-}
 
 int main()
 {

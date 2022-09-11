@@ -69,6 +69,23 @@ public:
 	}
 };
 
+int findNode(Node *head, int n)
+{
+    int count=0;
+    // Write your code here.
+    Node *temp=head;
+    while(temp)
+    { 
+        if(n==(temp->data))
+        {
+            return count;
+        }
+        count++;
+        temp=temp->next;
+    }
+    return -1;
+}
+
 
 Node *takeinput()
 {
@@ -91,24 +108,6 @@ Node *takeinput()
 		cin >> data;
 	}
 	return head;
-}
-
-
-
-int count=0;
-int findNode(Node *head, int n){
-    // Write your code here.
-    Node *temp=head;
-    while(temp!=NULL)
-    { 
-        if(n==((*temp).data))
-        {
-            return count;
-        }
-        count++;
-        temp=(*temp).next;
-    }
-    return -1;
 }
 
 

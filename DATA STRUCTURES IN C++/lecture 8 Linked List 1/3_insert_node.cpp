@@ -55,6 +55,31 @@ public:
 	}
 };
 
+
+Node* insertNode(Node *head, int pos, int data)
+{
+	int i=0;
+    Node *newnode=new Node(data);
+	Node *temp=head;
+	if(pos==0)
+	{
+		(*newnode).next=head;
+		head=newnode;
+		return head;
+	}
+	while(temp!=NULL && i<(pos-1))
+	{
+		temp=(*temp).next;
+		i++;
+	}
+	if(pos!=0)
+	{
+		(*newnode).next=(*temp).next;
+		(*temp).next=newnode;
+	}
+	return head;
+}
+
 Node *takeinput()
 {
 	int data;
@@ -89,29 +114,6 @@ void print(Node *head)
 	cout << endl;
 }
 
-Node* insertNode(Node *head, int pos, int data)
-{
-	int i=0;
-    Node *newnode=new Node(data);
-	Node *temp=head;
-	if(pos==0)
-	{
-		(*newnode).next=head;
-		head=newnode;
-		return head;
-	}
-	while(temp!=NULL && i<(pos-1))
-	{
-		temp=(*temp).next;
-		i++;
-	}
-	if(pos!=0)
-	{
-		(*newnode).next=(*temp).next;
-		(*temp).next=newnode;
-	}
-	return head;
-}
 
 int main()
 {

@@ -50,7 +50,24 @@ public:
 	}
 };
 
-
+Node *removeDuplicates(Node *head)
+{
+    if(!head) return head;
+    Node *fast = head->next;
+    Node *slow = head;
+    while(fast)
+    {
+        if(fast->data == slow->data)
+        {
+            slow -> next = fast -> next;
+        }
+        else
+            slow=slow->next;
+        fast=fast->next;
+        
+    }
+    return head;
+}
 
 Node *takeinput()
 {
@@ -84,34 +101,6 @@ void print(Node *head)
 		temp = temp->next;
 	}
 	cout << endl;
-}
-
-
-Node *removeDuplicates(Node *head)
-{
-    //Write your code here
-    if(head == NULL)
-    {
-        return head;
-    }
-    Node *fast_temp = head;
-    fast_temp=(*fast_temp).next;
-    Node *slow_temp = head;
-    while( fast_temp != NULL)
-    {
-        if((*fast_temp).data == (*slow_temp).data)
-        {
-            slow_temp -> next = fast_temp -> next;
-            
-        }
-        else
-        {
-            slow_temp=(*slow_temp).next;
-        }
-        fast_temp=(*fast_temp).next;
-        
-    }
-    return head;
 }
 
 

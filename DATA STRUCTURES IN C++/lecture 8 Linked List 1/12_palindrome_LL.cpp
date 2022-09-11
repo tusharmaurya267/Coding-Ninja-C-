@@ -36,7 +36,7 @@ For the second query, the list is empty. An empty list is always a palindrome , 
 
 */
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 
@@ -52,6 +52,55 @@ public:
 	}
 };
 
+
+int length(Node *head)
+{
+    int count=0;
+	Node *temp=head;
+    while(temp!=NULL)
+    {
+        count++;
+        temp=temp->next;
+    }
+    return count;
+}
+
+Node *reverse(Node * head){
+    Node *temp=head;
+    
+}
+
+bool isPalindrome(Node *head)
+{
+    if(!head) return true;
+    //Write your code here
+    
+    Node *fast=head;
+    Node *slow=head;
+    vector<int>ans;
+    while(fast && fast->next){
+        
+        fast=fast->next;
+        if(fast->next) {
+            fast=fast->next;
+            ans.push_back(slow->data);
+            slow=slow->next;
+        }        
+    }
+    if(length(head)%2==0){
+        ans.push_back(slow->data);
+    }
+    slow=slow->next;
+    int i=ans.size()-1;
+    while(slow){
+        if(slow->data!=ans[i]){
+            return false;
+        }
+        slow=slow->next;
+        i--;
+    }
+    return true;
+}
 
 Node *takeinput()
 {

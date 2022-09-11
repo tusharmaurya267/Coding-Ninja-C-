@@ -53,6 +53,17 @@ public:
 	}
 };
 
+void printReverse(Node *head)
+{
+    
+    Node *temp=head;
+    if(!temp)
+    {        
+        printReverse(temp -> next);
+        cout << temp -> data << " ";
+    }
+    
+}
 
 Node *takeinput()
 {
@@ -75,19 +86,6 @@ Node *takeinput()
 		cin >> data;
 	}
 	return head;
-}
-
-
-void printReverse(Node *head)
-{
-    
-    Node *temp=head;
-    if( temp  != NULL)
-    {        
-        printReverse(temp -> next);
-        cout << temp -> data << " ";
-    }
-    
 }
 
 int main()

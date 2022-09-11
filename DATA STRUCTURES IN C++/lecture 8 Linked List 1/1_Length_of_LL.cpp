@@ -45,6 +45,14 @@ public:
 		this->next = NULL;
 	}
 };
+int length(Node *head)
+{
+    //Write your code here
+     if(head==NULL)
+        return 0;
+    int ans=length((*head).next);
+    return ans+1;
+}
 
 
 Node *takeinput()
@@ -70,14 +78,6 @@ Node *takeinput()
 	return head;
 }
 
-int length(Node *head)
-{
-    //Write your code here
-     if(head==NULL)
-        return 0;
-    int ans=length((*head).next);
-    return ans+1;
-}
 
 
 int main()
